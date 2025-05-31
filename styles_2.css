@@ -1,0 +1,38 @@
+body {
+    margin: 20;
+    padding: 500px;
+    display: flex;
+	flex-direction:column;
+    align-items: center;
+    background-color: #FFFFFF;
+	overflow-y: scroll;
+ 	height: 100vh;
+	
+}
+
+.video-container {
+    margin: 1px;
+    position: relative;
+    cursor: grab;
+    left: 50px; /* Anfangsposition */
+    top: 50px;  /* Anfangsposition */
+	
+
+}
+
+/* Wenn die Maus über ein Video schwebt, wird der Cursor zum Pointer */
+.video-container video:hover {
+    cursor: pointer; /* Cursor wird zu einem Pointer beim Überfahren eines Videos */
+}
+
+
+video {
+    width: 960px;  /* Breite des Videos */
+    height: 123px;  /* Höhe des Videos */
+    object-fit: cover;  /* Das Video wird so skaliert, dass es den gesamten Bereich ausfüllt */
+    border: 0px solid white;
+	pointer-events: none;
+
+}
+
+

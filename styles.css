@@ -1,0 +1,99 @@
+body {
+    margin: 20;
+    padding: 500px;
+    display: flex;
+	flex-direction:column;
+    align-items: center;
+    background-color: #FFFFFF;
+	overflow-y: scroll;
+ 	height: 100vh;
+	
+}
+
+.video-container {
+    margin: 0px;
+    position: relative;
+
+}
+
+/* Wenn die Maus über ein Video schwebt, wird der Cursor zum Pointer */
+.video-container video:hover {
+    cursor: pointer; /* Cursor wird zu einem Pointer beim Überfahren eines Videos */
+}
+
+
+video {
+    width: 960px;  /* Breite des Videos */
+    height: 123px;  /* Höhe des Videos */
+    object-fit: cover;  /* Das Video wird so skaliert, dass es den gesamten Bereich ausfüllt */
+    border: 3px solid white;
+}
+
+/* Pop-up Styling */
+.popup {
+    display: none; /* Versteckt das Pop-up zu Beginn */
+    position: fixed;
+    z-index: 1; /* Stellt sicher, dass es über allem liegt */
+    left: 0;
+    top: 0;
+    width: 100%; /* Volle Breite */
+    height: 100%; /* Volle Höhe */
+    background-color: rgba(0, 0, 0, 0.5); /* Halbdurchsichtiger Hintergrund */
+}
+
+.popup-content {
+    position: relative;
+    margin: 15% auto; /* Zentriert das Pop-up */
+    padding: 20px;
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.popup-content {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+/* Vollbildseite für die einzelnen Videoseiten */
+.video-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+}
+
+/* Nur für Videos in voller Größe auf der Einzelvideoseite */
+.video-page video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* Button zum Zurückgehen */
+.video-page button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    z-index: 10;
+    cursor: pointer;
+}
+.click-counter {
+    z-index: 1000;
+    pointer-events: none; /* Verhindert, dass der Counter Klicks auf das Video blockiert */
+}
+
